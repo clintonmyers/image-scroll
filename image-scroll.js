@@ -101,8 +101,8 @@ new (class {
         this.accelleration.y = 0
 
         // limit velocity
-        this.velocity.x = this.velocity.x > this.limit ? this.limit : this.velocity.x
-        this.velocity.y = this.velocity.y > this.limit ? this.limit : this.velocity.y
+        this.velocity.x = Math.abs(this.velocity.x) > this.limit ? this.limit * Math.abs(this.velocity.x) / this.velocity.x : this.velocity.x
+        this.velocity.y = Math.abs(this.velocity.y) > this.limit ? this.limit * Math.abs(this.velocity.y) / this.velocity.y : this.velocity.y
 
         // set position
         this.position.x += this.velocity.x
